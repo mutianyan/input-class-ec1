@@ -1,0 +1,211 @@
+
+<html lang="en">
+  <head>
+  	<link id="stylesheet" rel="stylesheet" type="text/css" href="phone.css"/>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="phone.js" > </script>
+    <title>Mutian's Extra Credit 1 (Low Vision)</title>
+  </head>
+  <body>
+
+    <div id="box"><h> Choose UI Switcher:
+    <a onclick="setStyleSheet('phone.css', 0)" href="#">Normal</a> or 
+    <a onclick="setStyleSheet('phone-large.css', 1)" href="#">Low Vision</a>
+    </h></div>
+
+
+
+<div id= "tab" role="navigation">
+   <button id="button-1" class="tablinks" onclick="changeColor(event)" accesskey="d">Dialer</button> 
+   <button id="button-2" class="tablinks" onclick="changeColor(event)" accesskey="c">Contact List</button>
+   <button id="button-3" class="tablinks" onclick="changeColor(event)" accesskey="a">Add Contact</button> 
+   <button id="button-4" class="tablinks" onclick="changeColor(event)" accesskey="h">
+    Help</button> 
+</div>
+   <br />
+
+
+<div id = "init">
+  <div id="tab-1" class="tabcontent" style="width: 200px;">
+<!--   		<h1>Dialer</h1> -->
+<!-- 		<form class ="keys"> -->
+			<div class="keys">
+        <div>
+      <label for="inputBox" id="dialer" style="display: block;font-size: 2em;margin-block-start: 0.67em;margin-block-end: 0.67em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;"> Dialer </label> <br />
+      <input type="text" id= "inputBox" placeholder = "0" name= "Dialing Number" accesskey="i"></input> 
+    </div>
+<br />
+
+			<button onclick="addInput(1);" accesskey="1">1</button> <button onclick="addInput(2);" accesskey="2">2</button> <button onclick="addInput(3);" accesskey="3">3</button> <br />
+
+			<button onclick="addInput(4);" accesskey="4">4</button> <button onclick="addInput(5);" accesskey="5">5</button> <button onclick="addInput(6);" accesskey="6">6</button> <br />
+
+			<button onclick="addInput(7);" accesskey="7">7</button> <button onclick="addInput(8);" accesskey="8">8</button> <button onclick="addInput(9);" accesskey="9">9</button> <br />
+
+			<button onclick="addInput('*');" accesskey="*">*</button> <button onclick="addInput(0);" accesskey="0">0</button> <button onclick="addInput('#');" accesskey="#">#</button> <br />
+			<button onclick="addInput(-2);" accesskey="s">Dial</button> <button onclick="addInput(-1);" accesskey="e">Clear</button> <br />
+<!-- 		</form> -->
+</div>
+  </div>
+
+  <div id="tab-2" class="tabcontent">
+  	<h1> Contact List </h1>
+  	<button>Robert Drake </button>
+  	<button>Emma Frost </button>
+  	<button>Doreen Green </button> <br />
+
+
+  	<button>Jean Grey </button>
+  	<button> James Howlett</button>
+  	<button> Ororo Munroe</button> <br />
+
+
+  	 <button> Katherine Pryde</button>
+  	<button> Piotr Rasputin</button>
+  	<button> Scott Summers</button> <br />
+
+
+  	<button>Kurt Wagner </button>
+  	<button>Warren Worthington</button>
+  	<button>Charles Xavier </button> <br />
+
+
+<table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th> 
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Image</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td> 
+      <td>Jill.Smith@colorado.edu</td>
+      <td>5206789810</td>
+      <td><img src="Jill-Smith.png" alt="This is the image of Jill Smith who you are calling to" longdesc="http://love-netflix.wikia.com/wiki/Gus"  width= "100px"/></td>
+
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td> 
+      <td>Eve.Jackson@colorado.edu</td>
+      <td>6206726789</td>
+      <td><img src="Eve-Jackson.png" alt="This is your friend Eve Jackson who you are calling to" longdesc="http://love-netflix.wikia.com/wiki/Mickey" width= "100px"/></td>
+
+    </tr>
+</table>
+
+
+
+  </div>
+
+   <div id="tab-3" class="tabcontent">
+  	<h1> Add Contact </h1>
+    <form>
+    	<label for="input-name">Name</label> <br />
+    	<input type= "text" id="input-name" name="Name" placeholder="Jane Smith"> <br />
+<!--     </form> -->
+<!--     <form> -->
+    	<label for="input-phone-num">Phone number</label> <br />
+    	<input type ="text" id="input-phone-num" name="Phone Number" placeholder="123-456-7890"> <br />
+<!--     </form> -->
+<!--     <form> -->
+    	<label for="input-email">Email address</label> <br />
+    	<input type="text" id="input-email" name= "Email Address" placeholder="jane.smith@colorado.edu"> <br />
+<!--     </form> -->
+
+  	<button class="add-button"> Add Contact</button>
+  	<button class="clear-button"> Clear</button> <br>
+  </form>
+  </div>
+
+
+  <div id="tab-4" class="tabcontent">
+      <h2>A list of accessibility features</h2>
+
+      <ul id="table-features" style="list-style-type:circle;">
+        <li>Tab Control: Help users who rely on the keyboard to navigation, as well as screen reader users</li> 
+        <li>Keyboard shortcuts for Dialer and Tabs: Improve user experience</li>
+        <li>Accessible Table: Help screen readers to navigate formatted tables </li>
+        <li>Help Tab: Provide user manual-like information </li>
+        <li>Captioned Images: Primarily useful for screen reader users</li>
+       <li>ARIA landmark roles: Help assistive tech know how to navigate through the app </li>
+       <li>ARIA live regions: Provide access to dynamic web applications</li>
+      </ul>
+
+
+      <h2>A table of keyboard shortcuts implemented</h2>
+    <table id="shortcuts" > 
+      <!-- aria-live="polite" -->
+    <tr>
+      <th>Accesskeys</th>
+      <th>Description</th> 
+    </tr>
+    <tr>
+      <td>0-9, *, #</td>
+      <td>The keyboard shortcuts for number 0-9, symbols * or #</td> 
+    </tr>
+
+    <tr>
+      <td>s[sumbit]</td>
+      <td>The keyboard shortcuts for Dialer page's 'Dial' button</td> 
+    </tr>
+
+    <tr>
+      <td>e[exit]</td>
+      <td>The keyboard shortcuts for Dialer page's 'Clear' button</td> 
+    </tr>
+
+
+    <tr>
+      <td>d</td>
+      <td>The keyboard shortcuts for Tab 'Dialer'</td> 
+    </tr>
+    <tr>
+      <td>c</td>
+      <td>The keyboard shortcuts for Tab 'Contact List'</td> 
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>The keyboard shortcuts for Tab 'Add Contact'</td> 
+    </tr>
+    <tr>
+      <td>h</td>
+      <td>The keyboard shortcuts for Tab 'Help'</td> 
+    </tr>
+
+<img id="accessKeys-image" width="446px" alt="This is the accesskeys table">
+
+
+
+
+
+</table>
+
+
+
+      <br />
+
+      <label for="citation">Citation of the images used</label>
+      <ul id="citation" >
+        <li><a href="http://love-netflix.wikia.com/wiki/Gus">Jim Smith Image Source</a></li>
+        <li><a href="http://love-netflix.wikia.com/wiki/Mickey"> Eve Jackson Image Source </a></li>
+        <li><a href="https://www.w3schools.com/tags/att_global_accesskey.asp">W3School Access Key Table</a></li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+  </body>
+
+
+
+
+
+</html>
+
